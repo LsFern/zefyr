@@ -37,7 +37,7 @@ abstract class ZefyrImageDelegate<S> {
   /// Depending on your application returned key may represent a path to
   /// an image file on user's device, an HTTP link, or an identifier generated
   /// by a file hosting service like AWS S3 or Google Drive.
-  Future<String> pickImage(S source);
+  Future<String> pickImage(BuildContext context,S source);
 }
 
 class ZefyrImage extends StatefulWidget {
@@ -218,7 +218,7 @@ class RenderEditableImage extends RenderBox
         minWidth: 0.0,
         maxWidth: width,
         minHeight: 0.0,
-        maxHeight: (width * 9 / 16).floorToDouble(),
+//        maxHeight: (width * 9 / 16).floorToDouble(),
       );
       child.layout(childConstraints, parentUsesSize: true);
       _lastChildSize = child.size;
